@@ -111,7 +111,6 @@ namespace Internetbank
                     Console.WriteLine("4. Logga ut");
                 try 
                 {
-                
                     int.TryParse(Console.ReadLine(), out int UserChoice); // Make sure that UserChoice is a number
                     Console.Clear();
                     // Diffrent function in menu
