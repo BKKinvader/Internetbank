@@ -109,6 +109,9 @@ namespace Internetbank
                     Console.WriteLine("2. Överföring mellan konton");
                     Console.WriteLine("3. Ta ut pengar");
                     Console.WriteLine("4. Logga ut");
+                try 
+                {
+                
                     int.TryParse(Console.ReadLine(), out int UserChoice); // Make sure that UserChoice is a number
                     Console.Clear();
                     // Diffrent function in menu
@@ -127,13 +130,19 @@ namespace Internetbank
                             Choice = false;
                             break;
                         case 4:
-                        LogOut();
-                        Choice = false;
-                        break;
-                    default:
-                        Console.WriteLine("Du måste skriva en siffra mellan 1- 4");
-                        break;
+                            LogOut();
+                            Choice = false;
+                            break;
+                        default:
+                            Console.WriteLine("Du måste skriva en siffra mellan 1- 4");
+                            break;
+                    }
                 }
+                catch (Exception ex)
+                {
+                    Console.WriteLine(ex.Message);
+                }
+
             } while (Choice == true);
         }
         private static void CheckBalance(decimal account1, decimal account2) //4: Choice 1: to check balance
